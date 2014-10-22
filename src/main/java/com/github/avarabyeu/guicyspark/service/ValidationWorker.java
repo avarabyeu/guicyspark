@@ -4,9 +4,7 @@ import com.github.avarabyeu.guicyspark.service.model.Validation;
 import com.github.avarabyeu.wills.WillExecutorService;
 import com.github.avarabyeu.wills.WillExecutors;
 import com.google.common.util.concurrent.AbstractScheduledService;
-import com.google.common.util.concurrent.FutureCallback;
 
-import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.IOException;
