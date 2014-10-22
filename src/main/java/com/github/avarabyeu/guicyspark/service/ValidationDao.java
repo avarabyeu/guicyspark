@@ -15,9 +15,6 @@ public interface ValidationDao {
     @Select("SELECT * FROM validation WHERE id = #{id}")
     Validation findById(int id);
 
-    @Select("SELECT * FROM validation WHERE status = #{status}")
-    List<Validation> findByStatus(@Param("status") String status);
-
     @Select("SELECT * FROM validation WHERE status = #{status} LIMIT #{limit}")
     List<Validation> findByStatus(@Param("status") String status, @Param("limit") int maxItems);
 

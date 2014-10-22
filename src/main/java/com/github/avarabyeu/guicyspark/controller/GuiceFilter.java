@@ -28,7 +28,7 @@ public class GuiceFilter extends SparkFilter implements ServletContextListener {
     /* Singleton with lazy-loading */
     private static Supplier<Injector> injector = Suppliers.memoize(() -> Guice.createInjector(new ApplicationModule()));
 
-    /* obtains SparkApplication which is 'controller' layer */
+    /* obtains SparkApplication which is basically 'controller' layer */
     @Override
     protected SparkApplication getApplication(FilterConfig filterConfig) throws ServletException {
         return injector.get().getInstance(SparkApplication.class);

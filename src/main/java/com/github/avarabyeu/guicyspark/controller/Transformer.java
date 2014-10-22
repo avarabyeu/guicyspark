@@ -1,5 +1,6 @@
 package com.github.avarabyeu.guicyspark.controller;
 
+import com.google.common.base.Preconditions;
 import com.google.gson.Gson;
 import spark.ResponseTransformer;
 
@@ -15,8 +16,12 @@ import java.lang.reflect.Type;
  */
 class Transformer implements ResponseTransformer {
 
+    private final Gson gson;
+
     @Inject
-    private Gson gson;
+    Transformer(Gson gson) {
+        this.gson = Preconditions.checkNotNull(gson);
+    }
 
     @Override
     public String render(Object model) throws Exception {
